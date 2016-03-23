@@ -1,0 +1,165 @@
+/*
+    Author: Abbas Abdulmalik
+    Created: March 21, 2016
+    Revised: March 22, 2016    
+    Title: Resume Project (Abbas Abdulmalik)
+    Purpose: An online resume seeking web dev position.
+    Notes: The "look" and underlying code should
+    showcase my actual and latent talents (warts and all).
+    
+//=========| Map of index.html's elements |========
+   
+<div id="mobileHolder" class="fullScreen">
+    <div id="mainPanel" class="fullScreen">
+        <div id="coverPage" class="page">cover page</div>
+        <div id="upperPage" class="page">upper page</div>
+        <div id="lowerPage" class="page">lower page</div>
+    </div>
+    <div id="menu">
+        <div id="menuIcon" >&Congruent;</div> 
+        <div id="menuChoices">menu choices</div>        
+    </div>
+    <div id="splashPanel" class="fullScreen">splash panel</div>        
+</div>    
+*/
+
+body{
+    font-family: sans-serif;
+    user-select: none;
+}
+#mobileHolder{
+    position: fixed;
+    overflow: hidden;
+}
+
+.fullScreen{
+    position: absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;    
+}
+
+#splashPanel{
+    z-index: 2;
+    background: linear-gradient(hsl(25, 45%, 50%), hsl(25, 45%, 75%));
+    opacity: 1;
+    visibility: visible;
+    transition: visibility 2s ease, opacity 2s ease;
+    transition-delay: 1s;
+}
+#menu{
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    height: 96.5%;
+    left: 3rem;
+    right: 3rem;    
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 10px 10px 25px black;
+    background: #ccc;
+    color: #181818;
+    text-shadow: 0 1px 0 #fafafa;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.75s ease, visibility 0.75s ease;
+    box-sizing: border-box;
+    user-select: none;    
+}
+
+#menuChoices{
+    position: absolute;
+    top: 1rem;    
+    width: 60%;
+    height: 95%;
+    left: 13.5%;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 220%;
+    font-weight: bold; 
+    user-select: none;      
+}
+
+ul{
+    list-style: none;
+}
+li:hover{
+    cursor: pointer;
+    color: white;
+}
+
+#iconHolder{
+    left:0;
+    right:0;
+}
+
+#menuIcon{
+    position: absolute;
+    z-index: 2;
+    font-size: 2.5rem;
+    width: 1.5rem;
+    left: 3.3rem;
+    padding-left: 0.25rem;
+    cursor: pointer;
+    color: rgb(24, 24, 24);
+    text-shadow: 0 1px 0 #fafafa;
+    user-select: none;      
+}
+
+#exitIcon{
+    position: absolute;
+    z-index: 2;
+    font-size: 2rem;
+    width: 1.5rem;
+    right: 3.5rem;
+    padding-left: 0.25rem;
+    cursor: pointer;
+    color: rgb(255, 24, 24);
+    text-shadow: 0 2px 0 rgb(255, 220, 220);
+    visibility: hidden;
+    opacity: 1;
+    user-select: none;  
+}
+#mainPanel{
+    z-index: -1;
+    background: linear-gradient(-30deg, hsla(200, 51%, 50%, 0.8), hsla(200, 51%, 95%, 0.8));;
+}
+.page{
+    position: absolute;
+    left: 2rem;
+    right: 2rem;
+    height: 50%;
+    text-align: center;
+}
+#upperPage{   
+    top:0;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    background: linear-gradient(hsla(160, 35%, 100%, 0.8), hsla(160, 35%, 75%, 0.8));
+    z-index: 2;
+}
+
+#lowerPage{
+    bottom: 0;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    background: linear-gradient(hsla(160, 35%, 75%, 0.8), hsla(160, 35%, 50%, 0.8));    
+    z-index: 2;
+}
+
+#coverPage{
+    bottom: 0;
+    //border-bottom-left-radius: 0.5rem;
+    //border-bottom-right-radius: 0.5rem;
+    color: white;
+    background: linear-gradient(hsla(160, 35%, 76%, 0.8), hsla(160, 35%, 50%, 0.8));
+    opacity: 0;
+    visibility: hidden;
+    transform-origin: top;
+    transform: rotateX(0deg);
+    transition: opacity 0.5s linear, transform 1s linear;
+    z-index: -1;
+}
