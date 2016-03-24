@@ -1,11 +1,13 @@
 /*
     Author: Abbas Abdulmalik
     Created: March 21, 2016
-    Revised: March 22, 2016    
+    Revised: March 23, 2016    
     Title: Resume Project (Abbas Abdulmalik)
     Purpose: An online resume seeking web dev position.
-    Notes: The "look" and underlying code should
-    showcase my actual and latent talents (warts and all).
+			 The "look" and underlying code should
+			 showcase my actual and latent talents
+			 (warts and all).
+	Notes:
     
 //=========| Map of index.html's elements |========
    
@@ -45,20 +47,21 @@ body{
     background: linear-gradient(hsl(25, 45%, 50%), hsl(25, 45%, 75%));
     opacity: 1;
     visibility: visible;
-    transition: visibility 2s ease, opacity 2s ease;
+    transition: visibility 1s linear, opacity 1s linear;
     transition-delay: 1s;
 }
 #menu{
     z-index: 1;
     position: absolute;
-    top: 0;
-    height: 96.5%;
+    top: 0.5rem;
+    //height: 96.5%;
+	bottom: 0.5rem;
     left: 3rem;
     right: 3rem;    
     padding-left: 0.25rem;
     padding-right: 0.25rem;
     font-size: 1rem;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     box-shadow: 10px 10px 25px black;
     background: #ccc;
     color: #181818;
@@ -68,6 +71,41 @@ body{
     transition: opacity 0.75s ease, visibility 0.75s ease;
     box-sizing: border-box;
     user-select: none;    
+}
+#iconHolder{
+	top: 1rem;
+    left:0;
+    right:0;
+}
+
+#menuIcon{
+    position: absolute;
+    z-index: 2;
+    font-size: 2.8rem;
+    width: 1.5rem;
+	left: 0;
+	top: 0.25rem;
+    padding-left: 0.1rem;
+    cursor: pointer;
+    color: rgb(24, 24, 24);
+    text-shadow: 0 1px 0 #fafafa;
+    user-select: none;      
+}
+
+#exitIcon{
+    position: absolute;
+    z-index: 2;
+    font-size: 2rem;
+    width: 1.5rem;
+    right: 3.5rem;
+	top: 0.5rem;
+    padding-left: 0.25rem;
+    cursor: pointer;
+    color: rgb(255, 24, 24);
+    text-shadow: 0 2px 0 rgb(255, 220, 220);
+    visibility: hidden;
+    opacity: 1;
+    user-select: none;  
 }
 
 #menuChoices{
@@ -91,38 +129,7 @@ li:hover{
     color: white;
 }
 
-#iconHolder{
-    left:0;
-    right:0;
-}
 
-#menuIcon{
-    position: absolute;
-    z-index: 2;
-    font-size: 2.5rem;
-    width: 1.5rem;
-    left: 3.3rem;
-    padding-left: 0.25rem;
-    cursor: pointer;
-    color: rgb(24, 24, 24);
-    text-shadow: 0 1px 0 #fafafa;
-    user-select: none;      
-}
-
-#exitIcon{
-    position: absolute;
-    z-index: 2;
-    font-size: 2rem;
-    width: 1.5rem;
-    right: 3.5rem;
-    padding-left: 0.25rem;
-    cursor: pointer;
-    color: rgb(255, 24, 24);
-    text-shadow: 0 2px 0 rgb(255, 220, 220);
-    visibility: hidden;
-    opacity: 1;
-    user-select: none;  
-}
 #mainPanel{
     z-index: -1;
     background: linear-gradient(-30deg, hsla(200, 51%, 50%, 0.8), hsla(200, 51%, 95%, 0.8));;
@@ -132,34 +139,34 @@ li:hover{
     left: 2rem;
     right: 2rem;
     height: 50%;
+	padding: 0.5rem;
     text-align: center;
+	box-sizing: border-box;
+	cursor: pointer;
 }
 #upperPage{   
     top:0;
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
     background: linear-gradient(hsla(160, 35%, 100%, 0.8), hsla(160, 35%, 75%, 0.8));
     z-index: 2;
 }
 
 #lowerPage{
     bottom: 0;
-    border-bottom-left-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
     background: linear-gradient(hsla(160, 35%, 75%, 0.8), hsla(160, 35%, 50%, 0.8));    
     z-index: 2;
 }
 
 #coverPage{
     bottom: 0;
-    //border-bottom-left-radius: 0.5rem;
-    //border-bottom-right-radius: 0.5rem;
-    color: white;
     background: linear-gradient(hsla(160, 35%, 76%, 0.8), hsla(160, 35%, 50%, 0.8));
     opacity: 0;
     visibility: hidden;
     transform-origin: top;
     transform: rotateX(0deg);
-    transition: opacity 0.5s linear, transform 1s linear;
+    transition: opacity 1s linear, transform 0.8s linear, background 1s ease;
     z-index: -1;
 }
