@@ -33,19 +33,19 @@ window.onload = function(){
 	var lorem = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.<br/>" +
 	"Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero," +
 	"sit amet commodo magna eros quis urna.<br/>" +
-	"Nunc viverra imperdiet enim.<br/>Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+	"Nunc viverra imperdiet enim.<br/>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.";
 
-    var id = function id(ID){return document.getElementById(ID);}
-    var mainPanel = id("mainPanel");
+    var id          = function id(ID){return document.getElementById(ID);};
+    var mainPanel   = id("mainPanel");
     var splashPanel = id("splashPanel");
-    var coverPage = id("coverPage");
-    var flipper = coverPage; //an alias: item has dual use;
-    var lowerPage = id("lowerPage");
-    var upperPage = id("upperPage");
-    var menu = id("menu");
-    var menuIcon = id("menuIcon");
-    var exitIcon = id("exitIcon");
-    var choices = id("menuChoices");
+    var coverPage   = id("coverPage");
+    var flipper     = coverPage; //an alias: item has dual use;
+    var lowerPage   = id("lowerPage");
+    var upperPage   = id("upperPage");
+    var menu        = id("menu");
+    var menuIcon    = id("menuIcon");
+    var exitIcon    = id("exitIcon");
+    var choices     = id("menuChoices");
 
     var minFontSize = 10;
 
@@ -70,7 +70,7 @@ window.onload = function(){
     var cache = {};
 
 //=========| THE DRIVER'S SEAT |============
-	splashPanel.onclick = function(){splashPanel.style.opacity = "0";}
+
     initialize();
     coverPage.onclick = flipUp;
     lowerPage.onclick = flipUp;
@@ -90,13 +90,12 @@ function initialize(){
     handleMenuSelection();
     mainPanel.onclick = closeMenu;
 
-
     //---| Helper functions |---
     function dissolveSplashPanel(){
         splashPanel.style.opacity = "0";
         splashPanel.style.visibility = "hidden";
 
-    };
+    }
     function adjustRootEm(){
         var newRootEm = (minFontSize + window.innerWidth/100);
         document.documentElement.style.fontSize = newRootEm + "px";
@@ -116,7 +115,7 @@ function toggle(onHandler, offHandler, e){
         toggleOn = true;
     }
     e.stopPropagation();
-};
+}
 
 function openMenu(e){
     e.stopPropagation();
@@ -143,10 +142,6 @@ function closeMenu(e){
     },10);
 }
 
-function flashMenuIconWhite(seconds){
-    flashObjectColor(menuIcon, "white", seconds);
-}
-
 function flashObjectColor(object, color, seconds){
 	if(flags.flashingBusy)return;
 	flags.flashingBusy = true;
@@ -162,28 +157,27 @@ function flashObjectColor(object, color, seconds){
 }
 
 function flipUp(){
-    if(!menuShowing){flipFlipperUp()};
-
+    if(!menuShowing){flipFlipperUp()}
 }
 
 function flipDown(){
-    if(!menuShowing){flipFlipperDown()};
+    if(!menuShowing){flipFlipperDown()}
 }
 
 function pushFlipperDown(){
     flipper.style.bottom = "0";
     flipper.style.top = "50%";
-
 }
+
 function pushFlipperUp(){
     flipper.style.top = "0";
     flipper.style.bottom = "50%";
-
 }
+
 function pushFlipperForward(){
     flipper.style.zIndex = "4";
-
 }
+
 function pushFlipperBack(){
     flipper.style.zIndex = "-1";
 }
@@ -197,7 +191,6 @@ function hideFlipper(delay){
 	setTimeout(function(){
 		flipper.style.visibility = "hidden";
 	}, delay * 1000);
-    //flipper.style.opacity = "0";
 }
 
 function flipFlipperUp(){
@@ -249,7 +242,7 @@ function flipFlipperDown(){
     flipper.style.borderTopRightRadius = "1rem";
     flipper.style.borderBottomLeftRadius = "0";
     flipper.style.borderBottomRightRadius = "0";
-	flipper.style.border = "1px solid gray;"
+	flipper.style.border = "1px solid gray";
 	flipper.style.borderBottom = "none";
 
 	//put flipper into position before showing the flip
